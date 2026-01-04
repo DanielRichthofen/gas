@@ -3,11 +3,11 @@
 <html><body>
 <h2>Vista General de Usuarios y Cursos</h2>
 <?php
-$usuarios = $conexion->query("SELECT * FROM usuarios");
+$usuarios = $conexion->query("SELECT * FROM empleados");
 while($u=$usuarios->fetch_assoc()):
-$cursos = $conexion->query("SELECT * FROM cursos WHERE usuario_id={$u['id']}");
+$cursos = $conexion->query("SELECT * FROM cursos WHERE usuario_id={$u['Id']}");
 ?>
-<h3><?= $u['nombre'] ?> (<?= $u['curp'] ?>)</h3>
+<h3><?= $u['Nombre'] ?> (<?= $u['Curp'] ?>)</h3>
 <table border="1" width="100%">
 <tr><th>ID DC3</th><th>Curso</th><th>Empresa</th><th>Estatus</th></tr>
 <?php while($c=$cursos->fetch_assoc()): ?>
